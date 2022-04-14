@@ -1,19 +1,5 @@
 //= TO DO List para visitar provincias en Argentina
 
-function solicitarNombre() {
-    let nombreUsuario = prompt("Ingrese su nombre, por favor: ");
-    alert("Bienvenidx " + nombreUsuario + " a nuestro sitio web. Esperamos que tu visita sea placentera :)");
-}
-
-solicitarNombre();
-
-function solicitarDestino(){
-    let destino = prompt("¿A cuál provincia de Argentina tienes pensado viajar?"); 
-    alert("Usted ha seleccionado como su próximo destino la provincia de " + destino);
-}
-
-solicitarDestino();
-
 
 //' método constructor:
 class Provincia{
@@ -25,7 +11,7 @@ class Provincia{
 
 }
 
-//objetos:
+//'objetos:
 
 const buenosAires = new Provincia("Buenos Aires", "La Plata", "Centro-Este de Argentina");
 const catamarca = new Provincia("Catamarca", "San Fernando del Valle de Catamarca", "Noroeste de Argentina");
@@ -57,10 +43,60 @@ const tucuman = new Provincia("Tucumán", "San Miguel de Tucumán", "Noroeste de
 const provincias = [buenosAires, catamarca, chaco, chubut, cordoba, corrientes, entreRios, formosa, jujuy, laPampa, laRioja, mendoza, misiones, neuquen, rioNegro, salta, sanJuan, sanLuis, santaCruz, santaFe, santiagoDelEstero, tierraDelFuego, tucuman];
 console.log(provincias); 
 
-//' find: :
-let busqueda = provincias.find((el) => el === mendoza );
-console.log(busqueda); 
 
-//' filter: 
-let resultadoUbicacion = provincias.filter((ubicacion) => ubicacion.ubicacion.includes("Noreste de Argentina"));
-console.log(resultadoUbicacion);
+
+class toDoList{
+    constructor(provincia, actividad, fecha ,status){
+        this.provincia = provincia;
+        this.actividad = actividad;
+        this.fecha = fecha;
+        this.status = status;
+    }
+   
+}
+
+// Inicializa la lista de TODO
+const resetInputs = ()=>{
+    inputSeleccionar.value = "";
+    inputActividad.value ="";
+    inputFecha.value ="";
+    resultado.innerHTML = "Una nueva actividad ha sido agregada"
+
+}
+
+// Agregar una actividad a la to do list
+
+const addActividad = () =>{
+   
+   let provincia = inputSeleccionar.value;
+   let actividad = inputActividad.value;
+   let fecha = inputFecha.value;
+   let newTodo = new toDoList(provincia, actividad, fecha,'Para hacer'); 
+   todoList.push(newTodo);
+   
+   localStorage.setItem("todoList", JSON.stringify(todoList)); 
+
+   agregarAToDoList(); // Actualiza la lista de TODO
+   resetInputs(); // Limpia el formulario
+   addEventListener(addActividad);
+
+}
+
+
+// Botón para agregar a la lista
+btnAgregarActividad.onclick = (e) =>{
+    e.preventDefault(); // así no actualiza la página
+    addActividad(); // agrega una nueva actividad
+    
+}
+
+
+
+
+// Marcar todo como realizado
+checkClick = (index) =>{
+    todoList[index].status = 'Realizado';
+    localStorage.setItem("todoList",JSON.stringify(todoList));
+    agregarAToDoList();
+    
+}

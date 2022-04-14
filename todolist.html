@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+
+    <title> To Do activities </title>
+</head>
+<body>
+
+    <!-- Barra del menú-->
+    <nav>
+        <div class="nav-wrapper">
+          <a href="index.html" class="brand-logo right"></a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="#" id="barraToDo"> To Do activities </a></li>
+            
+          </ul>
+        </div>
+    </nav>
+    
+
+    <!-- to do list -->
+    <div id="todo" class="oculto">
+
+        <!-- seleccionar provincia y que se podría hacer -->
+
+        <div class="col-xs-12 col-sm-12 col-md-6">
+          <h2 class="sub-header">Nuevo TODO</h2>
+          <form>
+            <div class="form-group col-xs-12 col-sm-12">
+              <div class="col-sm-10">
+                <select id="inputSeleccionar" class="form-control">
+                  <option value="">Selecciona una provincia</option>
+                    <option value="1"> Buenos Aires </option>
+                    <option value="2"> Catamarca </option>
+                    <option value="3"> Chaco </option>
+                    <option value="4"> Chubut </option>
+                    <option value="5"> Córdoba </option>
+                    <option value="6"> Corrientes </option>
+                    <option value="7"> Entre Ríos </option>
+                    <option value="8"> Formosa </option>
+                    <option value="9"> Jujuy </option>
+                    <option value="10"> La Pampa </option>
+                    <option value="11"> La Rioja </option>
+                    <option value="12"> Mendoza </option>
+                    <option value="13"> Misiones </option>
+                    <option value="14"> Neuquén </option>
+                    <option value="15"> Río Negro </option>
+                    <option value="16"> Salta </option>
+                    <option value="17"> San Juan </option>
+                    <option value="18"> San Luis </option>
+                    <option value="19"> Santa Cruz </option>
+                    <option value="20"> Santa Fe </option>
+                    <option value="21"> Santiago del Estero </option>
+                    <option value="22"> Tierra del Fuego </option>
+                    <option value="23"> Tucumán </option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group col-xs-12 col-sm-12">
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputActividad" placeholder="Agrega una actividad que te gustaría hacer">
+              </div>
+            </div>
+            <div class="form-group col-xs-12 col-sm-12">
+              <div class="col-sm-10">
+                <input type="date" class="form-control" id="inputFecha" placeholder="Fecha">
+              </div>
+            </div>
+            <div class="form-group col-xs-12 col-sm-12">
+             
+              <div class="col-sm-10">
+                <button type="submit" id="btnAgregarActividad"class="btn btn-success">Agregar</button>
+              </div>
+            </div>
+          </form>
+          <div class="row" >
+            <div id="resultado" class="col-xs-12 col-sm-12">
+
+            </div>
+          </div>
+        </div>
+
+         <!-- Lista to do -->
+        <div class="col-xs-12 col-sm-12 col-md-6">
+          <h2 class="sub-header">
+            Listado TODO
+            
+          </h2>
+          
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Todo</th>
+                  <th>¿Cuándo lo voy a hacer?</th>
+                  <th> Estado </th>
+                  <th> Acción </th>
+                </tr>
+              </thead>
+              <tbody id="tablaToDo">
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+   
+    <script src="/js/elementos.js"></script>
+    <script src="/js/todolist.js"></script>
+    <script src="/js/index.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html>
