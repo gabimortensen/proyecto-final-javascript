@@ -37,15 +37,22 @@ const santiagoDelEstero = new Provincia("Santiago del Estero", "Santiago del Est
 const tierraDelFuego = new Provincia("Tierra del Fuego", "Ushuaia", "Sur de Argentina");
 const tucuman = new Provincia("Tucumán", "San Miguel de Tucumán", "Noroeste de Argentina");
 
-//* acceso condicional a un objeto:
-console.log(Provincia?.capital || "La propiedad no existe");
-console.log(Provincia?.ubicacion || "La propiedad no existe");
+
 
 //' array:
 const provincias = [buenosAires, catamarca, chaco, chubut, cordoba, corrientes, entreRios, formosa, jujuy, laPampa, laRioja, mendoza, misiones, neuquen, rioNegro, salta, sanJuan, sanLuis, santaCruz, santaFe, santiagoDelEstero, tierraDelFuego, tucuman];
 console.log(provincias); 
 
+//* acceso condicional a un objeto:
+console.log(provincias?.capital || "La propiedad no existe");
+console.log(provincias?.ubicacion || "La propiedad no existe");
+console.log(provincias?.poblacion || "La propiedad no existe");
 
+//* desestructuración de un objeto:
+const {nombre, capital, ubicacion} = provincias;
+console.log(nombre);
+console.log(capital);
+console.log(ubicacion);
 
 class toDoList{
     constructor(provincia, actividad, fecha ,status){
