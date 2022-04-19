@@ -37,7 +37,9 @@ const santiagoDelEstero = new Provincia("Santiago del Estero", "Santiago del Est
 const tierraDelFuego = new Provincia("Tierra del Fuego", "Ushuaia", "Sur de Argentina");
 const tucuman = new Provincia("Tucumán", "San Miguel de Tucumán", "Noroeste de Argentina");
 
-
+//* acceso condicional a un objeto:
+console.log(Provincia?.capital || "La propiedad no existe");
+console.log(Provincia?.ubicacion || "La propiedad no existe");
 
 //' array:
 const provincias = [buenosAires, catamarca, chaco, chubut, cordoba, corrientes, entreRios, formosa, jujuy, laPampa, laRioja, mendoza, misiones, neuquen, rioNegro, salta, sanJuan, sanLuis, santaCruz, santaFe, santiagoDelEstero, tierraDelFuego, tucuman];
