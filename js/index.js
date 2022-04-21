@@ -107,6 +107,20 @@ btnAgregarActividad.onclick = (e) =>{
     
 }
 
+// Sweet alert:
+btnAgregarActividad.addEventListener ("click", () => { 
+    Swal.fire({
+        title: '¡La actividad fue agregada con éxito!',
+        icon: 'success',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        },
+        timer: 2000,
+      })
+})
 
 
 
