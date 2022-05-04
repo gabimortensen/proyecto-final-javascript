@@ -1,18 +1,27 @@
 //= TO DO List para visitar provincias en Argentina
 
+//* fetch 
+const provincias = document.querySelector('#listado')
+
+fetch('/json/data.json') 
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        
+    });
 
 //' método constructor:
-class Provincia{
+/*class Provincia{
     constructor(nombre, capital, ubicacion) {
     this.nombre = nombre;
     this.capital = capital;
     this.ubicacion = ubicacion;
 }
 
-}
+}*/
 
 //'objetos:
-
+/*
 const buenosAires = new Provincia("Buenos Aires", "La Plata", "Centro-Este de Argentina");
 const catamarca = new Provincia("Catamarca", "San Fernando del Valle de Catamarca", "Noroeste de Argentina");
 const chaco = new Provincia("Chaco", "Resistencia", "Norte de Argentina");
@@ -36,28 +45,28 @@ const santaFe = new Provincia("Santa Fe", "Santa Fe de la Vera Cruz", "Noreste d
 const santiagoDelEstero = new Provincia("Santiago del Estero", "Santiago del Estero", "Norte de Argentina");
 const tierraDelFuego = new Provincia("Tierra del Fuego", "Ushuaia", "Sur de Argentina");
 const tucuman = new Provincia("Tucumán", "San Miguel de Tucumán", "Noroeste de Argentina");
-
+*/
 //* spread de objetos:
-const buenosAiresMasInfo ={
+/*const buenosAiresMasInfo ={
     ...buenosAires,
     cantidadDeHabitantes: parseInt("17541141")
 }
-console.log(buenosAiresMasInfo);
+console.log(buenosAiresMasInfo);*/
 
 //' array:
-const provincias = ["buenosAires", "catamarca", "chaco", "chubut", "cordoba", "corrientes", "entreRios", "formosa", "jujuy", "laPampa", "laRioja", "mendoza", "misiones", "neuquen", "rioNegro", "salta", "sanJuan", "sanLuis", "santaCruz", "santaFe", "santiagoDelEstero", "tierraDelFuego", "tucuman"];
-console.log(provincias); 
+/*const provincias = ["buenosAires", "catamarca", "chaco", "chubut", "cordoba", "corrientes", "entreRios", "formosa", "jujuy", "laPampa", "laRioja", "mendoza", "misiones", "neuquen", "rioNegro", "salta", "sanJuan", "sanLuis", "santaCruz", "santaFe", "santiagoDelEstero", "tierraDelFuego", "tucuman"];
+console.log(provincias); */
 
 //* acceso condicional a un objeto:
-console.log(santaCruz?.capital || "La propiedad no existe");
+/*console.log(santaCruz?.capital || "La propiedad no existe");
 console.log(mendoza?.ubicacion || "La propiedad no existe");
-console.log(tucuman?.poblacion || "La propiedad no existe");
+console.log(tucuman?.poblacion || "La propiedad no existe");*/
 
 //* desestructuración de un objeto:
-const {nombre, capital, ubicacion} = salta;
+/*const {nombre, capital, ubicacion} = salta;
 console.log(nombre);
 console.log(capital);
-console.log(ubicacion);
+console.log(ubicacion);*/
 
 
 
